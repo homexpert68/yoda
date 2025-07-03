@@ -1,0 +1,2407 @@
+TITLE: Basic Alert Component Usage
+DESCRIPTION: This snippet demonstrates the default usage of the Alert component to display a brief, important message. By default, it uses the 'info' severity and 'standard' variant.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Alert/Alert.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Alert } from './Alert';
+
+<Alert>This is an informational alert — check it out!</Alert>
+
+
+TITLE: Alert Component with Various Severities
+DESCRIPTION: This example showcases the Alert component with all available severity levels: 'info', 'success', 'warning', and 'error'. Each severity level applies a distinct color scheme to communicate the nature of the message.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Alert/Alert.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Alert } from './Alert';
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+  <Alert severity="info">This is an info alert — provides neutral information to users.</Alert>
+  <Alert severity="success">
+    This is a success alert — indicates a successful action or positive outcome.
+  </Alert>
+  <Alert severity="warning">
+    This is a warning alert — warns users about potential issues or important information.
+  </Alert>
+  <Alert severity="error">
+    This is an error alert — indicates an error has occurred that needs attention.
+  </Alert>
+</div>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Alert Component with Different Visual Variants
+DESCRIPTION: This snippet demonstrates the three visual variants of the Alert component: 'standard' (subtle background), 'filled' (solid background), and 'outlined' (bordered). These variants allow for different visual emphasis.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Alert/Alert.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Alert } from './Alert';
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+  <Alert variant="standard" severity="info">
+    Standard variant with subtle background color
+  </Alert>
+  <Alert variant="filled" severity="info">
+    Filled variant with solid background color
+  </Alert>
+  <Alert variant="outlined" severity="info">
+    Outlined variant with border and transparent background
+  </Alert>
+</div>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Alert Component with an Action Button
+DESCRIPTION: This example shows how to add an interactive element, such as a Button, to an Alert component using the action prop. This is useful for providing users with a direct way to respond to the alert.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Alert/Alert.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Alert } from './Alert';
+import { Button } from '../Button';
+
+<Alert
+  severity="warning"
+  children="Your session will expire in 5 minutes."
+  action={
+    <Button variant="text" size="sm">
+      Extend
+    </Button>
+  }
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Dismissible Alert Component
+DESCRIPTION: This example demonstrates how to make an Alert component dismissible by providing an onClose callback function. This will render a close icon button that users can click to hide the alert.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Alert/Alert.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Alert } from './Alert';
+
+<Alert
+  severity="info"
+  children="This alert can be dismissed by clicking the close button."
+  onClose={() => console.log('Alert dismissed')}
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Top App Bar Component
+DESCRIPTION: This snippet shows a standard top App Bar with a headline, a leading navigation icon, and a trailing options icon. This is a common pattern for main application headers.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/AppBar/AppBar.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { AppBar } from './AppBar';
+import { MdMenu, MdMoreVert } from 'react-icons/md';
+
+<AppBar
+  variant="top"
+  headline="Page title"
+  leadingContent={
+    <IconButton aria-label="Navigation menu">
+      <MdMenu size={24} />
+    </IconButton>
+  }
+  trailingContent={
+    <IconButton aria-label="More options">
+      <MdMoreVert size={24} />
+    </IconButton>
+  }
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Center-Aligned App Bar Component
+DESCRIPTION: This example demonstrates a center-aligned App Bar, where the title is centered, and actions are placed on the leading and trailing edges. This variant is often used for detail screens.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/AppBar/AppBar.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { AppBar } from './AppBar';
+import { MdChevronLeft, MdMoreVert } from 'react-icons/md';
+
+<AppBar
+  variant="center"
+  children="Page title"
+  leadingContent={
+    <IconButton aria-label="Back">
+      <MdChevronLeft size={24} />
+    </IconButton>
+  }
+  trailingContent={
+    <IconButton aria-label="More options">
+      <MdMoreVert size={24} />
+    </IconButton>
+  }
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Large Collapsible App Bar Component
+DESCRIPTION: This snippet showcases a large App Bar that collapses to a smaller size on scroll. It uses the variant="large" prop and requires a scroll container to trigger the collapse effect.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/AppBar/AppBar.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { AppBar } from './AppBar';
+import { MdChevronLeft, MdMoreVert } from 'react-icons/md';
+
+<AppBar
+  variant="large"
+  headline="Large page title"
+  leadingContent={
+    <IconButton aria-label="Back">
+      <MdChevronLeft size={24} />
+    </IconButton>
+  }
+  trailingContent={
+    <IconButton aria-label="More options">
+      <MdMoreVert size={24} />
+    </IconButton>
+  }
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Avatar Component
+DESCRIPTION: This example shows the basic usage of the Avatar component, which displays an image from a src URL and provides a text fallback (e.g., user initials) if the image fails to load.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Avatar/Avatar.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Avatar } from './Avatar';
+
+<Avatar
+  src="https://picsum.photos/id/237/200/300"
+  alt="User Avatar"
+  fallback="JD"
+  size={40}
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Avatar Component with Fallback
+DESCRIPTION: This snippet demonstrates the fallback behavior of the Avatar component. When the src URL is invalid or the image fails to load, the component displays the provided fallback text.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Avatar/Avatar.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Avatar } from './Avatar';
+
+<Avatar
+  src="https://invalid-url.example.com/broken-image.jpg"
+  alt="Broken Image"
+  fallback="AB"
+  size={40}
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Square-Shaped Avatar Component
+DESCRIPTION: The Avatar component's shape can be customized using the shape prop. This example shows how to create a square-shaped avatar.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Avatar/Avatar.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Avatar } from './Avatar';
+
+<Avatar
+  src="https://picsum.photos/id/237/200/300"
+  alt="Square Avatar"
+  fallback="SQ"
+  size={48}
+  shape="square"
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Avatar Component with Custom Colors
+DESCRIPTION: The background and text colors of the fallback state in the Avatar component can be customized using the fallbackColor and textColor props.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Avatar/Avatar.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Avatar } from './Avatar';
+
+<Avatar
+  fallback="CC"
+  size={48}
+  fallbackColor="#4CAF50"
+  textColor="#FFFFFF"
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Badge Component
+DESCRIPTION: This snippet shows a basic Badge component used to display a count, such as the number of notifications. By default, it uses the 'error' variant color.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Badge/Badge.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Badge } from './Badge';
+
+<Badge>5</Badge>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Badge Component with Variants
+DESCRIPTION: The Badge component supports different color variants ('error', 'warning', 'success', 'info') to convey semantic meaning.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Badge/Badge.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Badge } from './Badge';
+
+<div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+  <Badge variant="error">3</Badge>
+  <Badge variant="warning">12</Badge>
+  <Badge variant="success">New</Badge>
+  <Badge variant="info">99+</Badge>
+</div>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Dot Badge Component
+DESCRIPTION: A Badge can be rendered as a small dot, useful for indicating a status or unread notification without a specific count, by setting the dot prop to true.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Badge/Badge.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Badge } from './Badge';
+
+<Badge dot />
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Badge Component with Maximum Count
+DESCRIPTION: The max prop can be used to cap the displayed number on a Badge. Any number greater than max will be displayed as max+.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Badge/Badge.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Badge } from './Badge';
+
+<Badge max={99}>150</Badge>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Badge Component with an Icon Button
+DESCRIPTION: This example demonstrates how to position a Badge relative to another element, such as an IconButton, to create a notification indicator.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Badge/Badge.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Badge } from './Badge';
+import { IconButton } from '../IconButton';
+import { MdNotifications } from 'react-icons/md';
+
+<div style={{ position: 'relative', display: 'inline-block' }}>
+  <IconButton>
+    <MdNotifications size={24} />
+  </IconButton>
+  <div style={{ position: 'absolute', top: '-8px', right: '-8px' }}>
+    <Badge>5</Badge>
+  </div>
+</div>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Button Component
+DESCRIPTION: This snippet shows the default 'filled' variant of the Button component, which is the most prominent style for primary actions.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Button/Button.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Button } from './Button';
+
+<Button variant="filled">Filled Button</Button>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Button Component Variants
+DESCRIPTION: This example showcases all available visual styles for the Button component: 'filled', 'outlined', 'text', 'elevated', and 'tonal'. Each variant serves a different level of emphasis in the UI.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Button/Button.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Button } from './Button';
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+  <Button variant="filled">Filled Button</Button>
+  <Button variant="outlined">Outlined Button</Button>
+  <Button variant="text">Text Button</Button>
+  <Button variant="elevated">Elevated Button</Button>
+  <Button variant="tonal">Tonal Button</Button>
+</div>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Button Component with Icon
+DESCRIPTION: An icon can be added to a Button component using the icon prop. Its position can be controlled with the iconPosition prop ('left' or 'right').
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Button/Button.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Button } from './Button';
+import { MdDownload } from 'react-icons/md';
+
+<Button icon={<MdDownload size={16} />} iconPosition="left">
+  Button with Left Icon
+</Button>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Segmented Button Component
+DESCRIPTION: The SegmentedButton component allows users to select one option from a set. It is created by wrapping multiple SegmentedButton.Segment components.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Button/Button.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { SegmentedButton } from './Button';
+
+const BasicSegmentedButtonExample = () => {
+  const [selected, setSelected] = useState<string>('option1');
+
+  return (
+    <SegmentedButton selectedIds={selected} onSelect={id => setSelected(id as string)}>
+      <SegmentedButton.Segment id="option1">Option 1</SegmentedButton.Segment>
+      <SegmentedButton.Segment id="option2">Option 2</SegmentedButton.Segment>
+      <SegmentedButton.Segment id="option3">Option 3</SegmentedButton.Segment>
+    </SegmentedButton>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Multi-Select Segmented Button
+DESCRIPTION: By adding the multiselect prop, the SegmentedButton can be configured to allow multiple selections. The selectedIds prop should be an array of strings.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Button/Button.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { SegmentedButton } from './Button';
+
+const MultiSelectSegmentedButtonExample = () => {
+  const [selected, setSelected] = useState<string[]>(['option1', 'option3']);
+
+  return (
+    <SegmentedButton
+      multiselect
+      selectedIds={selected}
+      onSelect={ids => setSelected(ids as string[])}
+    >
+      <SegmentedButton.Segment id="option1">Option 1</SegmentedButton.Segment>
+      <SegmentedButton.Segment id="option2">Option 2</SegmentedButton.Segment>
+      <SegmentedButton.Segment id="option3">Option 3</SegmentedButton.Segment>
+      <SegmentedButton.Segment id="option4">Option 4</SegmentedButton.Segment>
+    </SegmentedButton>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Card Component
+DESCRIPTION: This snippet shows a basic Card component with the 'elevated' variant, which uses a shadow to create depth. Cards are used to group related content and actions.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Card/Card.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Card } from './Card';
+import { Typography } from '../Typography/Typography';
+
+<Card variant="elevated">
+  <div style={{ padding: '16px' }}>
+    <Typography variant="titleMedium" gutterBottom>
+      Basic Card
+    </Typography>
+    <Typography variant="bodyMedium">
+      This is a basic card with elevated style. Cards contain content and actions about a single
+      subject.
+    </Typography>
+  </div>
+</Card>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Card Component with Header and Footer
+DESCRIPTION: The Card component can be structured with distinct header and footer sections using the headerContent and footerContent props, which is useful for titles and action buttons.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Card/Card.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Card } from './Card';
+import { Typography } from '../Typography/Typography';
+import { Button } from '../Button/Button';
+
+<Card
+  variant="outlined"
+  headerContent={<Typography variant="titleMedium">Card Header</Typography>}
+  footerContent={
+    <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
+      <Button variant="text">Cancel</Button>
+      <Button>Save</Button>
+    </div>
+  }
+>
+  <div style={{ padding: '16px' }}>
+    <Typography variant="bodyMedium">
+      This card has a header and footer.
+    </Typography>
+  </div>
+</Card>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Horizontal Card Component with Image
+DESCRIPTION: By setting layout="horizontal", the Card component arranges its content horizontally. This is ideal for displaying an image alongside text content, such as in a list or feed.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Card/Card.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Card } from './Card';
+import { Typography } from '../Typography/Typography';
+
+<Card
+  variant="elevated"
+  layout="horizontal"
+  imageUrl="https://source.unsplash.com/random/400x400/?architecture"
+  imageAlt="Architecture"
+>
+  <div style={{ padding: '16px' }}>
+    <Typography variant="titleMedium" gutterBottom>
+      Horizontal Card
+    </Typography>
+    <Typography variant="bodyMedium">
+      This card uses a horizontal layout.
+    </Typography>
+  </div>
+</Card>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Interactive Card Component
+DESCRIPTION: The interactive prop adds hover and focus effects to the Card, indicating to the user that it is a clickable element, suitable for navigation or selection.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Card/Card.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Card } from './Card';
+import { Typography } from '../Typography/Typography';
+
+<Card variant="elevated" interactive>
+  <div style={{ padding: '16px' }}>
+    <Typography variant="titleMedium" gutterBottom>
+      Interactive Card
+    </Typography>
+    <Typography variant="bodyMedium">
+      This card is interactive and has hover effects.
+    </Typography>
+  </div>
+</Card>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Assist Chip Component
+DESCRIPTION: Assist chips represent smart or automated actions, like adding an event to a calendar. They often start with a verb and can include an icon.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Chip/Chip.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Chip, ChipSet } from './';
+import { MdCalendarToday, MdMap } from 'react-icons/md';
+
+<ChipSet>
+  <Chip
+    variant="assist"
+    label="Add to my itinerary"
+    icon={<MdCalendarToday />}
+    onClick={() => console.log('Add to itinerary')}
+  />
+  <Chip
+    variant="assist"
+    label="12 mins from hotel"
+    icon={<MdMap />}
+    onClick={() => console.log('Show on map')}
+  />
+</ChipSet>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Filter Chip Component
+DESCRIPTION: Filter chips are used to filter content. They can be selected or deselected, and their state is often indicated by a leading checkmark icon when selected.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Chip/Chip.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { Chip, ChipSet } from './';
+
+const FilterChipsExample = () => {
+  const [selected, setSelected] = useState(true);
+
+  return (
+    <ChipSet>
+      <Chip
+        variant="filter"
+        label="Slides"
+        selected={selected}
+        onClick={() => setSelected(!selected)}
+      />
+    </ChipSet>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Input Chip Component
+DESCRIPTION: Input chips represent discrete pieces of information, like email contacts or search terms. They typically include a trailing 'X' icon for removal.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Chip/Chip.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { Chip, ChipSet } from './';
+
+const InputChipsExample = () => {
+  const [attendees, setAttendees] = useState([
+    { id: 1, name: 'Ping Qiang' },
+  ]);
+
+  const removeAttendee = (id: number) => {
+    setAttendees(prev => prev.filter(a => a.id !== id));
+  };
+
+  return (
+    <ChipSet>
+      {attendees.map(attendee => (
+        <Chip
+          key={attendee.id}
+          variant="input"
+          label={attendee.name}
+          onRemove={() => removeAttendee(attendee.id)}
+        />
+      ))}
+    </ChipSet>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Suggestion Chip Component
+DESCRIPTION: Suggestion chips help users by offering dynamic, contextual suggestions, such as quick replies in a chat application.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Chip/Chip.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Chip, ChipSet } from './';
+
+<ChipSet>
+  <Chip
+    variant="suggestion"
+    label="I agree"
+    onClick={() => console.log('Selected: I agree')}
+  />
+  <Chip
+    variant="suggestion"
+    label="Looks good to me"
+    onClick={() => console.log('Selected: Looks good to me')}
+  />
+</ChipSet>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Checkbox Component
+DESCRIPTION: This snippet shows the default usage of the Checkbox component with a label. It can be used in a controlled or uncontrolled manner.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Forms/Checkbox/Checkbox.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Checkbox } from './Checkbox';
+
+<Checkbox
+  label="Accept terms and conditions"
+  size="md"
+  defaultChecked={false}
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Checkbox Component with Helper Text and Error State
+DESCRIPTION: The Checkbox component can display helper text and enter an error state. The error prop applies error styling, and helperText provides additional context or error messages.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Forms/Checkbox/Checkbox.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Checkbox } from './Checkbox';
+
+<Checkbox
+  label="Checkbox with error"
+  error={true}
+  helperText="This field is required"
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic DatePicker Component
+DESCRIPTION: This example demonstrates a basic, controlled DatePicker component. It includes a label and placeholder text, and its state is managed via the value and onChange props.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/DatePicker/DatePicker.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { DatePicker } from './DatePicker';
+
+const DefaultRender = () => {
+  const [date, setDate] = useState<Date | null>(null);
+  return <DatePicker
+    label="Date"
+    placeholder="MM/DD/YYYY"
+    value={date}
+    onChange={setDate}
+  />;
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: DatePicker with Date Restrictions
+DESCRIPTION: The DatePicker can be configured to restrict selectable dates to a specific range using the minDate and maxDate props.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/DatePicker/DatePicker.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { DatePicker } from './DatePicker';
+
+const WithDateRestrictionsRender = () => {
+  const [date, setDate] = useState<Date | null>(null);
+  const today = new Date();
+  const minDate = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate());
+  const maxDate = new Date(today.getFullYear() + 1, today.getMonth(), today.getDate());
+
+  return (
+    <DatePicker
+      label="Appointment Date"
+      helperText="Select a date within one year from today"
+      value={date}
+      onChange={setDate}
+      minDate={minDate}
+      maxDate={maxDate}
+    />
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Dialog Component
+DESCRIPTION: This example shows how to create a basic dialog using Dialog, DialogTrigger, and DialogContent. The dialog is modal and includes a title, description, and a close button.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Dialog/Dialog.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Dialog, DialogTrigger, DialogClose, DialogContent } from './Dialog';
+import { Button } from '../Button/Button';
+import { Typography } from '../Typography/Typography';
+
+<Dialog>
+  <DialogTrigger asChild>
+    <Button>Open Dialog</Button>
+  </DialogTrigger>
+  <DialogContent
+    title="Basic Dialog"
+    description="This is a simple dialog."
+  >
+    <Typography variant="bodyMedium">
+      This is the content of the dialog.
+    </Typography>
+    <DialogClose asChild>
+      <Button>Close</Button>
+    </DialogClose>
+  </DialogContent>
+</Dialog>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Form Dialog Component
+DESCRIPTION: This snippet demonstrates how to create a dialog containing a form. The footer prop is used for action buttons like 'Cancel' and 'Submit', and the form is linked to the submit button via its ID.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Dialog/Dialog.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Dialog, DialogTrigger, DialogClose, DialogContent } from './Dialog';
+import { Button } from '../Button/Button';
+
+<Dialog>
+  <DialogTrigger asChild>
+    <Button>Open Form Dialog</Button>
+  </DialogTrigger>
+  <DialogContent
+    title="Create New Account"
+    type="form"
+    footer={
+      <>
+        <DialogClose asChild>
+          <Button variant="text">Cancel</Button>
+        </DialogClose>
+        <Button type="submit" form="account-form">
+          Create Account
+        </Button>
+      </>
+    }
+  >
+    <form id="account-form">
+      {/* Form fields go here */}
+    </form>
+  </DialogContent>
+</Dialog>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Alert Dialog Component
+DESCRIPTION: An alert dialog informs the user about urgent information that requires acknowledgment. The preventOutsideClose prop is used to ensure the user explicitly interacts with the dialog.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Dialog/Dialog.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Dialog, DialogTrigger, DialogClose, DialogContent } from './Dialog';
+import { Button } from '../Button/Button';
+
+<Dialog>
+  <DialogTrigger asChild>
+    <Button variant="tonal">Show Alert</Button>
+  </DialogTrigger>
+  <DialogContent
+    title="Warning"
+    type="alert"
+    preventOutsideClose
+    footer={
+      <DialogClose asChild>
+        <Button>I Understand</Button>
+      </DialogClose>
+    }
+  >
+    {/* Alert message content */}
+  </DialogContent>
+</Dialog>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Divider Component
+DESCRIPTION: The Divider component is used to visually separate content. This example shows a default horizontal divider.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Divider/Divider.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Divider } from './Divider';
+import { Typography } from '../Typography/Typography';
+
+<div>
+  <Typography variant="bodyLarge">Content above</Typography>
+  <Divider />
+  <Typography variant="bodyLarge">Content below</Typography>
+</div>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Divider with Text
+DESCRIPTION: A horizontal Divider can include text, which is useful for creating clear separations in forms or lists, such as an 'OR' condition.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Divider/Divider.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Divider } from './Divider';
+import { Typography } from '../Typography/Typography';
+
+<div>
+  <Typography variant="bodyLarge">Login with your email and password.</Typography>
+  <Divider text="OR" spacing="lg" />
+  <Typography variant="bodyLarge">Continue with Google or Facebook.</Typography>
+</div>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Vertical Divider Component
+DESCRIPTION: By setting orientation="vertical", the Divider can be used to separate content horizontally.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Divider/Divider.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Divider } from './Divider';
+import { Typography } from '../Typography/Typography';
+
+<div style={{ display: 'flex', height: '100px', alignItems: 'center' }}>
+  <Typography variant="bodyLarge">Left content</Typography>
+  <Divider orientation="vertical" />
+  <Typography variant="bodyLarge">Right content</Typography>
+</div>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Floating Action Button (FAB)
+DESCRIPTION: The Floating Action Button (FAB) represents the primary action on a screen. This example shows a standard FAB with a primary color variant.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/FAB/FAB.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { FAB } from './FAB';
+import { MdAdd } from 'react-icons/md';
+
+<FAB variant="primary">
+  <MdAdd size={24} />
+</FAB>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Extended Floating Action Button (FAB)
+DESCRIPTION: A FAB can be extended to include a text label by setting the extended prop to true and providing a label. This is useful for making the primary action more explicit.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/FAB/FAB.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { FAB } from './FAB';
+import { MdMail } from 'react-icons/md';
+
+<FAB extended label="Compose">
+  <MdMail size={24} />
+</FAB>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Standard Icon Button
+DESCRIPTION: The IconButton provides a circular touch target for an icon. The 'standard' variant has a transparent background with a state layer on interaction.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/IconButton/IconButton.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { IconButton } from './IconButton';
+import { MdFavoriteBorder } from 'react-icons/md';
+
+<IconButton variant="standard">
+  <MdFavoriteBorder size={24} />
+</IconButton>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Icon Button Variants
+DESCRIPTION: IconButtons are available in 'standard', 'filled', and 'outlined' variants to match different levels of emphasis and UI contexts.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/IconButton/IconButton.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { IconButton } from './IconButton';
+import { MdFavoriteBorder, MdAdd, MdSettings } from 'react-icons/md';
+
+<div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+  <IconButton variant="standard">
+    <MdFavoriteBorder size={24} />
+  </IconButton>
+  <IconButton variant="filled">
+    <MdAdd size={24} />
+  </IconButton>
+  <IconButton variant="outlined">
+    <MdSettings size={24} />
+  </IconButton>
+</div>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Icon Toggle Button
+DESCRIPTION: The IconToggle component is a button that allows users to toggle a selection on and off, such as favoriting an item. It animates between an outlined and a filled state.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/IconToggle/IconToggle.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { IconToggle } from './IconToggle';
+import { IoMdHeart } from 'react-icons/io';
+
+<IconToggle
+  icon={<IoMdHeart />}
+  activeColor="#FF0000"
+  defaultActive={false}
+  size={40}
+  strokeWidth={20}
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic List Component
+DESCRIPTION: The List component is used to display a vertical list of items. This example shows a simple list with several ListItem children.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/List/List.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { List, ListItem } from './List';
+
+<List>
+  <ListItem>Item 1</ListItem>
+  <ListItem>Item 2</ListItem>
+  <ListItem>Item 3</ListItem>
+</List>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: List with Icons and Secondary Text
+DESCRIPTION: ListItems can be enhanced with leading icons (startIcon), trailing icons (endIcon), and secondary text to provide more context for each item.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/List/List.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { List, ListItem } from './List';
+import { MdMail, MdChevronRight } from 'react-icons/md';
+
+<List dividers>
+  <ListItem
+    interactive
+    startIcon={<MdMail size={18} />}
+    endIcon={<MdChevronRight size={18} />}
+    secondaryText="This is a description for the item"
+  >
+    Inbox
+  </ListItem>
+</List>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: List with Subheaders
+DESCRIPTION: The ListSubheader component can be used to group items within a List into sections. The sticky prop can be used to make the subheader stick to the top during scrolling.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/List/List.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { List, ListItem, ListSubheader } from './List';
+
+<List dividers>
+  <ListSubheader sticky>Section 1</ListSubheader>
+  <ListItem>Item 1</ListItem>
+  <ListItem>Item 2</ListItem>
+  <ListSubheader sticky>Section 2</ListSubheader>
+  <ListItem>Item 3</ListItem>
+</List>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Menu Component
+DESCRIPTION: This example demonstrates a basic Menu, triggered by a Button. The menu contains MenuItem components and a MenuSeparator.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Menu/Menu.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Menu, MenuTrigger, MenuContent, MenuItem, MenuSeparator } from './Menu';
+import { Button } from '../Button';
+
+<Menu>
+  <MenuTrigger asChild>
+    <Button variant="outlined">Open Menu</Button>
+  </MenuTrigger>
+  <MenuContent>
+    <MenuItem>Profile</MenuItem>
+    <MenuItem>Settings</MenuItem>
+    <MenuSeparator />
+    <MenuItem>Log out</MenuItem>
+  </MenuContent>
+</Menu>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Menu with Submenus
+DESCRIPTION: Menus can be nested to create submenus. This is achieved by using the MenuSub, MenuSubTrigger, and MenuSubContent components.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Menu/Menu.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Menu, MenuTrigger, MenuContent, MenuItem, MenuSub, MenuSubTrigger, MenuSubContent } from './Menu';
+import { Button } from '../Button';
+
+<Menu>
+  <MenuTrigger asChild>
+    <Button variant="outlined">Fruits Menu</Button>
+  </MenuTrigger>
+  <MenuContent>
+    <MenuItem>Apple</MenuItem>
+    <MenuSub>
+      <MenuSubTrigger>More Fruits</MenuSubTrigger>
+      <MenuSubContent>
+        <MenuItem>Cherry</MenuItem>
+        <MenuItem>Grape</MenuItem>
+      </MenuSubContent>
+    </MenuSub>
+  </MenuContent>
+</Menu>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Menu with Selected Items
+DESCRIPTION: Menu items can indicate a selected state, which is useful for settings or preference menus. The selected prop on a MenuItem will display a checkmark icon.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Menu/Menu.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { Menu, MenuTrigger, MenuContent, MenuItem } from './Menu';
+import { Button } from '../Button';
+
+const SelectedItemsExample = () => {
+  const [notifications, setNotifications] = useState(true);
+
+  return (
+    <Menu>
+      <MenuTrigger asChild>
+        <Button variant="outlined">Preferences</Button>
+      </MenuTrigger>
+      <MenuContent>
+        <MenuItem
+          selected={notifications}
+          onSelect={() => setNotifications(!notifications)}
+        >
+          Enable Notifications
+        </MenuItem>
+      </MenuContent>
+    </Menu>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Modal Navigation Drawer
+DESCRIPTION: A modal NavigationDrawer appears over the content and is typically used on smaller screens. It is controlled with the open and onClose props.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/NavigationDrawer/NavigationDrawer.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { NavigationDrawer, NavigationItem } from './NavigationDrawer';
+import { IconButton } from '../IconButton';
+import { MdMenu, MdHome } from 'react-icons/md';
+
+const ModalNavigationDrawer = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <IconButton onClick={() => setOpen(true)}>
+        <MdMenu size={24} />
+      </IconButton>
+      <NavigationDrawer
+        open={open}
+        onClose={() => setOpen(false)}
+        variant="modal"
+      >
+        <NavigationItem id="home" icon={<MdHome size={24} />} label="Home" />
+      </NavigationDrawer>
+    </>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Permanent Navigation Drawer
+DESCRIPTION: A permanent NavigationDrawer is always visible on the screen and is suitable for desktop layouts. It pushes the main content to the side.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/NavigationDrawer/NavigationDrawer.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { NavigationDrawer, NavigationItem } from './NavigationDrawer';
+import { MdHome } from 'react-icons/md';
+
+<div style={{ display: 'flex' }}>
+  <NavigationDrawer open={true} variant="permanent">
+    <NavigationItem id="home" icon={<MdHome size={24} />} label="Home" />
+  </NavigationDrawer>
+  <main>
+    {/* Page content goes here */}
+  </main>
+</div>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Navigation Rail
+DESCRIPTION: The NavigationRail provides access to primary destinations in an app, typically on tablet and desktop screens. It displays a column of icons and optional text labels.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/NavigationRail/NavigationRail.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { NavigationRail, NavigationRailItem } from './NavigationRail';
+import { MdHome, MdSearch, MdSettings } from 'react-icons/md';
+
+const BasicNavigationRail = () => {
+  const [selected, setSelected] = useState(0);
+
+  return (
+    <NavigationRail>
+      <NavigationRailItem
+        icon={<MdHome size={24} />}
+        label="Home"
+        selected={selected === 0}
+        onClick={() => setSelected(0)}
+      />
+      <NavigationRailItem
+        icon={<MdSearch size={24} />}
+        label="Search"
+        selected={selected === 1}
+        onClick={() => setSelected(1)}
+      />
+      <NavigationRailItem
+        icon={<MdSettings size={24} />}
+        label="Settings"
+        selected={selected === 2}
+        onClick={() => setSelected(2)}
+      />
+    </NavigationRail>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Collapsible Navigation Rail
+DESCRIPTION: A NavigationRail can be made collapsible to save space. The collapsible prop enables this behavior, and the collapsed and onCollapsedChange props can be used to control its state.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/NavigationRail/NavigationRail.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { NavigationRail, NavigationRailItem } from './NavigationRail';
+import { MdHome, MdSearch } from 'react-icons/md';
+
+const CollapsibleNavigationRail = () => {
+  const [selected, setSelected] = useState(0);
+  const [collapsed, setCollapsed] = useState(false);
+
+  return (
+    <NavigationRail collapsible collapsed={collapsed} onCollapsedChange={setCollapsed}>
+      <NavigationRailItem
+        icon={<MdHome size={24} />}
+        label="Home"
+        selected={selected === 0}
+        onClick={() => setSelected(0)}
+      />
+      <NavigationRailItem
+        icon={<MdSearch size={24} />}
+        label="Search"
+        selected={selected === 1}
+        onClick={() => setSelected(1)}
+      />
+    </NavigationRail>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Linear Progress Indicator
+DESCRIPTION: The Progress component can be rendered as a linear bar. This example shows a determinate linear progress indicator with a specific value.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Progress/Progress.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Progress } from './Progress';
+
+<Progress variant="linear" value={65} />
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Indeterminate Linear Progress
+DESCRIPTION: When the value prop is omitted, the Progress component enters an indeterminate state, which is used when the completion time of a process is unknown.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Progress/Progress.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Progress } from './Progress';
+
+<Progress variant="linear" />
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Circular Progress Indicator
+DESCRIPTION: By setting variant="circular", the Progress component renders as a circular indicator. This example shows a determinate circular progress indicator.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Progress/Progress.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Progress } from './Progress';
+
+<Progress variant="circular" value={75} />
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Circular Progress with Label
+DESCRIPTION: The showLabel prop can be used to display the current progress percentage inside the circular indicator.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Progress/Progress.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Progress } from './Progress';
+
+<Progress variant="circular" value={85} showLabel={true} />
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic RadioGroup Component
+DESCRIPTION: The RadioGroup component is used to group multiple RadioButton components, allowing a user to select only one option from a set.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Forms/RadioButton/RadioButton.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { RadioButton, RadioGroup } from './RadioButton';
+
+<RadioGroup label="Select an option" defaultValue="option1">
+  <RadioButton value="option1" label="Option 1" />
+  <RadioButton value="option2" label="Option 2" />
+  <RadioButton value="option3" label="Option 3" />
+</RadioGroup>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Horizontal RadioGroup
+DESCRIPTION: The orientation of the RadioGroup can be set to 'horizontal' to lay out the radio buttons in a row.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Forms/RadioButton/RadioButton.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { RadioButton, RadioGroup } from './RadioButton';
+
+<RadioGroup label="Horizontal Radio Group" defaultValue="option1" orientation="horizontal">
+  <RadioButton value="option1" label="Option 1" />
+  <RadioButton value="option2" label="Option 2" />
+  <RadioButton value="option3" label="Option 3" />
+</RadioGroup>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Select Component
+DESCRIPTION: The Select component provides a dropdown menu for selecting one option from a list. This example shows an 'outlined' variant.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Forms/Select/Select.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { Select } from './Select';
+
+const OutlinedSelect = () => {
+  const [value, setValue] = useState('');
+  const fruitOptions = [
+    { value: 'apple', label: 'Apple' },
+    { value: 'banana', label: 'Banana' },
+  ];
+
+  return (
+    <Select
+      label="Choose a fruit"
+      value={value}
+      onChange={setValue}
+      options={fruitOptions}
+      variant="outlined"
+    />
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Select Component with Option Icons
+DESCRIPTION: The Select component can display an icon next to each option in the dropdown menu, as well as an icon for the selected value in the input field.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Forms/Select/Select.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { Select } from './Select';
+import { MdHome, MdWork } from 'react-icons/md';
+
+const WithOptionIconsSelect = () => {
+  const [value, setValue] = useState('home');
+  const iconOptionsData = [
+    { value: 'home', label: 'Home', icon: <MdHome size={20} /> },
+    { value: 'work', label: 'Work', icon: <MdWork size={20} /> },
+  ];
+
+  return (
+    <Select
+      label="Location Type"
+      value={value}
+      onChange={setValue}
+      options={iconOptionsData}
+      variant="outlined"
+    />
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Slider Component
+DESCRIPTION: The Slider component allows users to make selections from a range of values. This is a basic, continuous slider.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Slider/Slider.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Slider } from './Slider';
+
+<Slider defaultValue={[50]} />
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Discrete Slider with Ticks and Label
+DESCRIPTION: A slider can be made discrete by setting the step and ticks props. The labeled prop displays the current value in a tooltip above the thumb during interaction.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Slider/Slider.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Slider } from './Slider';
+
+<Slider
+  defaultValue={[40]}
+  min={0}
+  max={100}
+  step={10}
+  ticks={true}
+  labeled={true}
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Range Slider Component
+DESCRIPTION: By setting thumbCount={2}, the Slider can be used to select a range of values. The defaultValue or value prop should be an array with two numbers.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Slider/Slider.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Slider } from './Slider';
+
+<Slider
+  defaultValue={[25, 75]}
+  thumbCount={2}
+  min={0}
+  max={100}
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Vertical Slider Component
+DESCRIPTION: The Slider can be oriented vertically by setting orientation="vertical".
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Slider/Slider.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Slider } from './Slider';
+
+<div style={{ height: '300px' }}>
+  <Slider defaultValue={[50]} orientation="vertical" />
+</div>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Using the Snackbar Provider
+DESCRIPTION: To use the Snackbar component, wrap your application or a portion of it with the SnackbarProvider. This allows any child component to trigger snackbars using the useSnackbar hook.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Snackbar/Snackbar.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { SnackbarProvider, useSnackbar } from './';
+import { Button } from '../Button';
+
+const SnackbarDemo = () => {
+  const snackbar = useSnackbar();
+
+  return (
+    <Button onClick={() => snackbar.show('This is a simple snackbar message')}>
+      Show Simple Snackbar
+    </Button>
+  );
+};
+
+const App = () => (
+  <SnackbarProvider>
+    <SnackbarDemo />
+  </SnackbarProvider>
+);
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Snackbar with an Action
+DESCRIPTION: A Snackbar can include an action button, such as 'Undo' or 'Retry', by providing an action object with a label and an onClick handler to the snackbar.show method.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Snackbar/Snackbar.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useSnackbar } from './';
+import { Button } from '../Button';
+
+const Demo = () => {
+  const snackbar = useSnackbar();
+  return (
+    <Button
+      onClick={() =>
+        snackbar.show({
+          message: 'Unable to save changes',
+          action: {
+            label: 'Retry',
+            onClick: () => console.log('Retry clicked'),
+          },
+        })
+      }
+    >
+      With Action
+    </Button>
+  );
+}
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Switch Component
+DESCRIPTION: The Switch component is a toggle control that allows users to turn a setting on or off.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Forms/Switch/Switch.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Switch } from './Switch';
+
+<Switch
+  label="Toggle setting"
+  size="md"
+  defaultChecked={false}
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Switch Component with Icon
+DESCRIPTION: An icon can be displayed inside the Switch thumb by passing a React node to the icon prop. This is useful for visually representing the state, like a moon icon for dark mode.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Forms/Switch/Switch.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Switch } from './Switch';
+import { MdDarkMode } from 'react-icons/md';
+
+<Switch
+  label="Dark Mode"
+  helperText="Toggle between light and dark theme"
+  icon={<MdDarkMode />}
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Tabs Component
+DESCRIPTION: The Tabs component provides a way to navigate between different views or groups of content. It consists of a Tabs container and multiple Tab components.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Tabs/Tabs.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { Tabs, Tab } from './Tabs';
+
+const PrimaryTabs = () => {
+  const [value, setValue] = useState(0);
+
+  return (
+    <Tabs value={value} onChange={setValue}>
+      <Tab label="Photos" />
+      <Tab label="Videos" />
+      <Tab label="Music" />
+    </Tabs>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Tabs with Icons
+DESCRIPTION: Tabs can include icons in addition to or instead of labels. By default, the icon is displayed above the label.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Tabs/Tabs.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { Tabs, Tab } from './Tabs';
+import { MdImage, MdVideoLibrary } from 'react-icons/md';
+
+const WithIconsTabs = () => {
+  const [value, setValue] = useState(0);
+
+  return (
+    <Tabs value={value} onChange={setValue}>
+      <Tab icon={<MdImage />} label="Photos" />
+      <Tab icon={<MdVideoLibrary />} label="Videos" />
+    </Tabs>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Scrollable Tabs Component
+DESCRIPTION: When there are more tabs than can fit in the available space, the scrollable prop allows the user to scroll horizontally to view all tabs.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Tabs/Tabs.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useState } from 'react';
+import { Tabs, Tab } from './Tabs';
+
+const ScrollableTabs = () => {
+  const [value, setValue] = useState(0);
+
+  return (
+    <div style={{ maxWidth: '400px' }}>
+      <Tabs value={value} onChange={setValue} scrollable>
+        <Tab label="Tab 1" />
+        <Tab label="Tab 2" />
+        <Tab label="Tab 3" />
+        <Tab label="Tab 4" />
+        <Tab label="Tab 5" />
+      </Tabs>
+    </div>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic TextArea Component
+DESCRIPTION: The TextArea component provides a multi-line text input field for forms. This example shows the default 'classic' variant.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Forms/TextArea/TextArea.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { TextArea } from './TextArea';
+
+<TextArea
+  placeholder="Enter your message..."
+  variant="classic"
+  size="md"
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: TextArea with Floating Label
+DESCRIPTION: By setting floatingLabel={true}, the label will float above the input field when it is focused or has a value, saving space and providing a modern look.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Forms/TextArea/TextArea.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { TextArea } from './TextArea';
+
+<TextArea
+  label="Floating Label"
+  placeholder="Label floats when focused"
+  floatingLabel={true}
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic TextField Component
+DESCRIPTION: The TextField component is a single-line text input for forms. This example shows the default 'outlined' variant with a label.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Forms/TextField/TextField.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { TextField } from './TextField';
+
+<TextField
+  label="Label"
+  placeholder="Enter text"
+  variant="outlined"
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: TextField with Icon
+DESCRIPTION: An icon can be added to the TextField using the icon prop. The iconPosition prop controls whether it appears on the 'left' or 'right'.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Forms/TextField/TextField.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { TextField } from './TextField';
+import { MdSearch } from 'react-icons/md';
+
+<TextField
+  label="Search"
+  placeholder="Search..."
+  icon={<MdSearch size={24} />}
+  iconPosition="left"
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: TextField with Error State
+DESCRIPTION: The error prop puts the TextField into an error state, changing its border and label color. The helperText prop can be used to display the error message.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Forms/TextField/TextField.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { TextField } from './TextField';
+
+<TextField
+  label="Error State"
+  placeholder="Error TextField"
+  error={true}
+  helperText="This field is required"
+/>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Using the YodaThemeProvider
+DESCRIPTION: The YodaThemeProvider is the root provider for the UI library. It should wrap your entire application to provide theme context to all components. It handles light/dark mode and dynamic color generation.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/ThemeProvider/ThemeProvider.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { YodaThemeProvider } from './ThemeProvider';
+
+const App = () => {
+  return (
+    <YodaThemeProvider initialTheme="light">
+      {/* Your application components */}
+    </YodaThemeProvider>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Using the useYodaTheme Hook
+DESCRIPTION: The useYodaTheme hook allows any component within the YodaThemeProvider to access the current theme object and functions to change the theme, such as toggleTheme.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/ThemeProvider/useYodaTheme.ts
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { useYodaTheme } from './useYodaTheme';
+import { Button } from '../Button';
+
+const ThemeToggler = () => {
+  const { theme, toggleTheme } = useYodaTheme();
+
+  return (
+    <Button onClick={toggleTheme}>
+      Switch to {theme.mode === 'light' ? 'Dark' : 'Light'} Mode
+    </Button>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Generating a Dynamic Theme with sourceColorHex
+DESCRIPTION: The YodaThemeProvider can generate a complete light and dark color palette from a single sourceColorHex. This allows for easy and dynamic theming based on a brand color.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/ThemeProvider/ThemeProvider.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { YodaThemeProvider } from './ThemeProvider';
+
+const AppWithCustomTheme = () => {
+  return (
+    <YodaThemeProvider sourceColorHex="#F37021">
+      {/* Your application components will now use a theme generated from orange */}
+    </YodaThemeProvider>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Using the Toast Provider
+DESCRIPTION: To enable toast notifications, wrap your application with the ToastProvider. This allows any child component to trigger toasts using the toast utility functions.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Toast/Toast.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { ToastProvider, toast } from './';
+import { Button } from '../Button';
+
+const ToastDemo = () => {
+  return (
+    <Button onClick={() => toast.success('Success!')}>
+      Show Success Toast
+    </Button>
+  );
+};
+
+const App = () => (
+  <ToastProvider>
+    <ToastDemo />
+  </ToastProvider>
+);
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Triggering Different Toast Variants
+DESCRIPTION: The toast utility provides methods for different notification types: success, error, warning, info, and default. Each variant has a corresponding icon and styling.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Toast/toast.utils.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { toast } from './toast.utils';
+
+toast.success('Item saved successfully!');
+toast.error('Failed to update profile.');
+toast.warning('Your session is about to expire.');
+toast.info('A new version is available.');
+toast.default('This is a default notification.');
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Loading and Updating Toasts
+DESCRIPTION: A loading toast can be shown for asynchronous operations and then updated to a success or error state upon completion. This provides clear feedback to the user.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Toast/Toast.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { toast } from './toast.utils';
+
+const handleSave = () => {
+  const toastId = toast.loading('Saving your preferences...');
+  setTimeout(() => {
+    // On success
+    toast.success('Preferences saved successfully!', {
+      id: toastId,
+    });
+    // On failure
+    // toast.error('Save failed.', { id: toastId });
+  }, 2000);
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Tooltip Component
+DESCRIPTION: The Tooltip component provides a text label that appears when a user hovers over or focuses on an element. It's useful for providing brief, contextual information.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Tooltip/Tooltip.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Tooltip } from './Tooltip';
+import { Button } from '../Button';
+
+<Tooltip content="Add to favorites">
+  <Button>Hover me</Button>
+</Tooltip>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Rich Tooltip Component
+DESCRIPTION: The RichTooltip variant can display a title, body text, and action buttons, making it suitable for more complex information or quick actions.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Tooltip/Tooltip.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { RichTooltip } from './Tooltip';
+import { Button } from '../Button';
+
+<RichTooltip
+  title="Rich Tooltip"
+  content="This tooltip can display a title, body text, and optional action buttons."
+  action={
+    <Button variant="text">Learn More</Button>
+  }
+>
+  <Button variant="filled">Rich Tooltip</Button>
+</RichTooltip>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Basic Typography Component
+DESCRIPTION: The Typography component is used to render text with consistent styling based on the theme's type scale. The variant prop determines the style.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Typography/Typography.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Typography } from './Typography';
+
+<Typography variant="headlineLarge">Headline Large</Typography>
+<Typography variant="bodyMedium">This is some body text.</Typography>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Typography with Color and Alignment
+DESCRIPTION: The color and align props can be used to customize the text color and alignment of the Typography component.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Typography/Typography.stories.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Typography } from './Typography';
+
+<Typography variant="bodyLarge" color="primary" align="center">
+  Centered Primary Text
+</Typography>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Text Truncation with Typography
+DESCRIPTION: The Truncate and LineClamp components, which extend Typography, can be used to handle text overflow by truncating with an ellipsis for single-line or multi-line text.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/Typography/TextTreatments.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { Truncate, LineClamp } from './TextTreatments';
+
+<Truncate variant="bodyLarge">
+  This is a very long single line of text that will be truncated.
+</Truncate>
+
+<LineClamp variant="bodyLarge" lines={2}>
+  This is a very long multi-line text that will be clamped to two lines with an ellipsis at the end if it overflows.
+</LineClamp>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
+
+TITLE: Using the YodaProvider for a Complete Setup
+DESCRIPTION: The YodaProvider is a convenient wrapper that combines YodaThemeProvider and ToastProvider. It's the recommended way to set up the library at the root of your application.
+SOURCE: /Users/wes/Documents/projects/gamuda/yoda/src/components/YodaProvider/YodaProvider.tsx
+
+LANGUAGE: tsx
+CODE:
+
+Generated tsx
+import { YodaProvider } from './YodaProvider';
+
+const App = () => {
+  return (
+    <YodaProvider
+      initialTheme="dark"
+      sourceColorHex="#F37021"
+      features={{ enableToast: true }}
+    >
+      {/* Your application components */}
+    </YodaProvider>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Tsx
+IGNORE_WHEN_COPYING_END
